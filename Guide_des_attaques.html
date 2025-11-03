@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Last War - Schéma Stratégique Détaillé</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            color: #fff;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #ffd700;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+            letter-spacing: 2px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 40px;
+            font-style: italic;
+            font-size: 1.1em;
+        }
+        
+        .main-section {
+            background: rgba(255,255,255,0.03);
+            border: 3px solid;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .main-section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+        }
+        
+        .section-1 { border-color: #4a90e2; }
+        .section-2 { border-color: #e74c3c; }
+        .section-3 { border-color: #f39c12; }
+        .section-4 { border-color: #9b59b6; }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid rgba(255,255,255,0.2);
+        }
+        
+        .section-icon {
+            font-size: 3em;
+            margin-right: 20px;
+        }
+        
+        .section-title {
+            font-size: 2em;
+            font-weight: bold;
+        }
+        
+        .section-subtitle {
+            font-size: 0.9em;
+            color: #bbb;
+            margin-top: 5px;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 20px;
+        }
+        
+        .tactic-card {
+            background: rgba(255,255,255,0.08);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid;
+            transition: all 0.3s ease;
+        }
+        
+        .tactic-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateX(8px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+        
+        .section-1 .tactic-card { border-left-color: #4a90e2; }
+        .section-2 .tactic-card { border-left-color: #e74c3c; }
+        .section-3 .tactic-card { border-left-color: #f39c12; }
+        .section-4 .tactic-card { border-left-color: #9b59b6; }
+        
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+        }
+        
+        .card-icon {
+            font-size: 1.8em;
+            margin-right: 12px;
+        }
+        
+        .card-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        
+        .card-content {
+            font-size: 0.95em;
+            color: #ddd;
+        }
+        
+        .detail-list {
+            margin: 12px 0;
+            padding-left: 0;
+        }
+        
+        .detail-item {
+            padding: 10px;
+            margin: 8px 0;
+            background: rgba(0,0,0,0.2);
+            border-radius: 8px;
+            border-left: 3px solid #ffd700;
+        }
+        
+        .detail-item strong {
+            color: #ffd700;
+            display: block;
+            margin-bottom: 5px;
+        }
+        
+        .pros-cons-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .pros, .cons {
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .pros {
+            background: rgba(46, 204, 113, 0.15);
+            border: 2px solid rgba(46, 204, 113, 0.4);
+        }
+        
+        .cons {
+            background: rgba(231, 76, 60, 0.15);
+            border: 2px solid rgba(231, 76, 60, 0.4);
+        }
+        
+        .pros h4, .cons h4 {
+            color: #ffd700;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .pros ul, .cons ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .pros li::before {
+            content: "✓ ";
+            color: #2ecc71;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .cons li::before {
+            content: "✗ ";
+            color: #e74c3c;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .warning-box {
+            background: rgba(231, 76, 60, 0.2);
+            border: 2px solid #e74c3c;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 12px;
+        }
+        
+        .warning-box strong {
+            color: #ff6b6b;
+            font-size: 1.1em;
+        }
+        
+        .phase-timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: stretch;
+            margin: 20px 0;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .phase {
+            background: linear-gradient(135deg, rgba(155, 89, 182, 0.3), rgba(142, 68, 173, 0.3));
+            padding: 18px;
+            border-radius: 12px;
+            border: 2px solid rgba(155, 89, 182, 0.6);
+            flex: 1;
+            min-width: 200px;
+            position: relative;
+        }
+        
+        .phase-number {
+            background: linear-gradient(135deg, #9b59b6, #8e44ad);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.3em;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+        
+        .phase-title {
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+        
+        .phase-desc {
+            font-size: 0.9em;
+            color: #ddd;
+        }
+        
+        .arrow-connector {
+            font-size: 2.5em;
+            color: #ffd700;
+            display: flex;
+            align-items: center;
+            padding: 0 5px;
+        }
+        
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .rule-card {
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(0,0,0,0.3);
+        }
+        
+        .rule-do {
+            border: 2px solid #2ecc71;
+            background: rgba(46, 204, 113, 0.1);
+        }
+        
+        .rule-dont {
+            border: 2px solid #e74c3c;
+            background: rgba(231, 76, 60, 0.1);
+        }
+        
+        .rule-card h4 {
+            color: #ffd700;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        
+        .resource-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .resource-card {
+            background: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid rgba(243, 156, 18, 0.5);
+            transition: all 0.3s ease;
+        }
+        
+        .resource-card:hover {
+            transform: scale(1.05);
+            border-color: #f39c12;
+        }
+        
+        .resource-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .resource-icon {
+            font-size: 2em;
+            margin-right: 12px;
+        }
+        
+        .resource-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        
+        .key-principle {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 35px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            margin-top: 40px;
+            border: 3px solid rgba(255,215,0,0.3);
+        }
+        
+        .key-principle .icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+        }
+        
+        .strategy-tip {
+            background: rgba(52, 152, 219, 0.2);
+            border-left: 4px solid #3498db;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+            font-style: italic;
+        }
+        
+        .strategy-tip::before {
+            content: "💡 ";
+            margin-right: 8px;
+        }
+        
+        .highlight {
+            color: #ffd700;
+            font-weight: bold;
+        }
+        
+        .small-text {
+            font-size: 0.85em;
+            color: #bbb;
+        }
+        
+        @media (max-width: 1200px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>⚔️ LAST WAR : MANUEL TACTIQUE COMPLET ⚔️</h1>
+        <p class="subtitle">"La maîtrise des concepts présentés ici est cruciale pour la domination lors des conflits de haute intensité"</p>
+        
+        <!-- PRINCIPE FINAL -->
+        <div class="key-principle">
+            <div class="icon">⭐</div>
+            <div style="font-size: 1.5em; margin-bottom: 15px;">PRINCIPE FONDAMENTAL DE LA DOMINATION</div>
+            <div style="font-size: 1em; font-weight: normal; line-height: 1.8;">
+                La <span class="highlight">puissance brute</span> est une RESSOURCE<br>
+                La <span class="highlight">stratégie disciplinée</span> est un MULTIPLICATEUR DE FORCE<br><br>
+                <span style="font-size: 0.9em; font-style: italic;">
+                "C'est la stratégie disciplinée qui assure la domination, pas la force seule."
+                </span>
+            </div>
+        </div>
+        
+        <!-- RÉSUMÉ VISUEL RAPIDE -->
+        <div class="main-section" style="border-color: #ffd700; margin-top: 30px;">
+            <div class="section-header">
+                <div class="section-icon">📋</div>
+                <div>
+                    <div class="section-title">MÉMO RAPIDE : CHECKLIST DU COMMANDANT</div>
+                    <div class="section-subtitle">Les actions essentielles avant chaque engagement majeur</div>
+                </div>
+            </div>
+            
+            <div class="content-grid">
+                <div class="tactic-card" style="border-left-color: #ffd700;">
+                    <div class="card-header">
+                        <span class="card-icon">✅</span>
+                        <span class="card-title">Avant Combat Défensif</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="detail-list">
+                            <div class="detail-item">
+                                ☐ Évaluer puissance adversaire (espion ou reconnaissance)<br>
+                                ☐ Décider : Mur actif ou passif ?<br>
+                                ☐ Vérifier capacité hôpital disponible<br>
+                                ☐ Bouclier disponible en inventaire ?<br>
+                                ☐ Téléporteur d'urgence prêt ?<br>
+                                ☐ Si sans mur : S'assurer escouades HORS base<br>
+                                ☐ Communiquer avec alliance pour renforts potentiels
+                            </div>
+                        </div>
+                        
+                        <div class="strategy-tip">
+                            Gestion hôpital optimale = Capacité combattre plusieurs vagues successives sans pertes définitives
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tactic-card" style="border-left-color: #ffd700;">
+                    <div class="card-header">
+                        <span class="card-icon">⚔️</span>
+                        <span class="card-title">Avant Offensive</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="detail-list">
+                            <div class="detail-item">
+                                ☐ Utiliser avion espion sur cible<br>
+                                ☐ Vérifier présence troupes sur mur ennemi<br>
+                                ☐ Estimer puissance défensive<br>
+                                ☐ Préparer escouade la PLUS FORTE en premier<br>
+                                ☐ Téléporteur avancé en inventaire<br>
+                                ☐ Endurance suffisante pour engagement<br>
+                                ☐ Plan de repli en cas d'échec
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tactic-card" style="border-left-color: #ffd700;">
+                    <div class="card-header">
+                        <span class="card-icon">👥</span>
+                        <span class="card-title">Événements d'Alliance</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="detail-list">
+                            <div class="detail-item">
+                                ☐ Communication stratégie avec leadership<br>
+                                ☐ Synchronisation horaires avec membres<br>
+                                ☐ Rôle assigné : Soutien ou Force de frappe ?<br>
+                                ☐ Stock de téléporteurs zone guerre<br>
+                                ☐ Hôpital vidé avant engagement<br>
+                                ☐ Accélérateurs disponibles<br>
+                                ☐ Coordination Discord/Chat active
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FOOTER INSPIRATIONNEL -->
+        <div style="text-align: center; margin-top: 40px; padding: 30px; background: rgba(0,0,0,0.3); border-radius: 15px; border: 2px solid rgba(255,215,0,0.2);">
+            <div style="font-size: 1.5em; color: #ffd700; margin-bottom: 15px;">⚔️ 🛡️ 👑</div>
+            <div style="font-size: 1.2em; color: #fff; font-weight: bold; margin-bottom: 10px;">
+                "La victoire appartient à ceux qui préparent, coordonnent et exécutent avec discipline."
+            </div>
+            <div style="font-size: 0.95em; color: #bbb; font-style: italic;">
+                Transformez ces principes en réflexes, et vous transcenderez la simple compétence pour atteindre l'excellence tactique.
+            </div>
+        </div>
+    </div>
+<!-- SECTION 1: RINCIPES FONDAMENTAUX DE DÉFENSE -->
+    <div class="container">   
+        <div class="main-section section-2">
+            <div class="section-header">
+                <div class="section-icon">⚡</div>
+                    <div>
+                        <div class="section-title">1. PRINCIPES FONDAMENTAUX DE DÉFENSE</div>
+                        <div class="section-subtitle">La survie et l'intégrité de votre base sont le fondement de toute projection de puissance</div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-grid">
+                <div class="tactic-card">
+                    <div class="card-header">
+                        <span class="card-icon">🚫</span>
+                        <span class="card-title">Défense Passive (Sans Troupes sur Mur)</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="strategy-tip" style="margin-bottom: 15px;">
+                            <strong>Quand utiliser :</strong> Face à des "baleines" avec puissance écrasante, quand survie de l'armée est prioritaire sur les points
+                        </div>
+                        
+                        <p><strong>Philosophie :</strong> Minimisation des pertes face à une force écrasante (baleine).</p>
+                        
+                        <div class="pros-cons-grid">
+                            <div class="pros">
+                                <h4>✓ Avantages Tactiques</h4>
+                                <ul>
+                                    <li>Pertes fixes très faibles (1,000-4,500 unités)</li>
+                                    <li>Préserve l'armée principale intacte</li>
+                                    <li>Stratégie optimale contre adversaire manifestement supérieur</li>
+                                    <li>Économie d'accélérateurs de guérison</li>
+                                </ul>
+                            </div>
+                            <div class="cons">
+                                <h4>✗ Risques Stratégiques</h4>
+                                <ul>
+                                    <li>Ennemi gagne points sans risque</li>
+                                    <li>Base détruite et téléportée à répétition</li>
+                                    <li>Perturbation majeure des opérations</li>
+                                    <li>Aucune dissuasion contre attaquants faibles</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tactic-card">
+                    <div class="card-header">
+                        <span class="card-icon">⚔️</span>
+                        <span class="card-title">Défense Active (Troupes sur le Mur)</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="strategy-tip" style="margin-bottom: 15px;">
+                            <strong>Quand utiliser :</strong> Contre joueurs de puissance similaire ou inférieure, pendant événements où points de destruction sont cruciaux
+                        </div>
+                        
+                        <p><strong>Philosophie :</strong> Infliger un coût à l'attaquant en acceptant un combat défensif.</p>
+                        
+                        <div class="pros-cons-grid">
+                            <div class="pros">
+                                <h4>✓ Avantages Tactiques</h4>
+                                <ul>
+                                    <li>Troupes vaincues → Hôpital (pas de pertes définitives)</li>
+                                    <li>Préserve la force de combat totale</li>
+                                    <li>Inflige des pertes à l'attaquant</li>
+                                    <li>Génère des points de destruction même en défense</li>
+                                    <li>Dissuade les attaques opportunistes des joueurs faibles</li>
+                                </ul>
+                            </div>
+                            <div class="cons">
+                                <h4>✗ Risques Stratégiques</h4>
+                                <ul>
+                                    <li>Pertes potentiellement massives vs adversaire supérieur</li>
+                                    <li>Hôpital saturé rapidement = armée inopérante</li>
+                                    <li>Consommation élevée d'accélérateurs de guérison</li>
+                                    <li>Vulnérabilité prolongée si débordé</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="warning-box">
+                            <strong>⚠️ AVERTISSEMENT CRITIQUE ⚠️</strong><br>
+                            Si TOUTES vos escouades sont physiquement dans la base (ni en collecte, ni en garnison) au moment de l'impact, vous risquez de perdre TOUTES les troupes de votre terrain d'entraînement. Cette perte est bien plus catastrophique que celle subie à l'hôpital avec défense active !
+                        </div>                        
+                    </div>
+                </div>
+            </div>            
+            <div class="tactic-card" style="margin-top: 20px;">
+                <div class="card-header">
+                    <span class="card-icon">🛡️</span>
+                    <span class="card-title">Stratégies Avancées de Préservation des Troupes</span>
+                </div>
+                <div class="card-content">
+                    <div class="detail-list">
+                        <div class="detail-item">
+                            <strong>1. Le Bouclier - Méthode de Prévention Optimale</strong>
+                            • Garantit immunité totale contre toute attaque<br>
+                            • Boucliers disponibles : 1h, 8h, 12h, 24h<br>
+                            • Achat : Boutique d'Alliance<br>
+                            • <span class="highlight">Investissement stratégique</span>, pas une dépense<br>
+                            • Recommandé : Bouclier 24h le samedi pendant événements de combat
+                        </div>
+                        
+                        <div class="detail-item">
+                            <strong>2. "L'Évasion de Krypton" - Manœuvre de Dernière Minute</strong>
+                            • <span class="highlight">Principe mécanique :</span> Les troupes hors de la base ne sont pas comptabilisées dans les pertes<br>
+                            • <span class="highlight">Procédure :</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;1. Détecter attaque entrante imminente<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;2. Envoyer TOUTES escouades hors base (collecte, patrouille, attaque fictive)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;3. Base détruite et téléportée → Pertes minimales<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;4. Escouades retournent automatiquement après téléportation, saines et sauves<br>
+                            • <span class="highlight">Timing crucial :</span> Exécution 30-60 secondes avant impact
+                        </div>
+                        
+                        <div class="detail-item">
+                            <strong>3. La Garnison Préventive - Tactique Proactive</strong>
+                            • Envoyer TOUTES escouades en garnison chez alliés fiables<br>
+                            • <span class="highlight">Critère de sélection :</span> Allié DOIT avoir bouclier actif<br>
+                            • Votre base devient coquille vide = pertes minimales<br>
+                            • Armée complète préservée et opérationnelle<br>
+                            • <span class="highlight">Idéal pour :</span>Cibles prioritaires anticipant attaques massives
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">    
+        <!-- SECTION 2: OFFENSIVE -->
+        <div class="main-section section-2">
+            <div class="section-header">
+                <div class="section-icon">⚡</div>
+                <div>
+                    <div class="section-title">2. L'ART DE L'OFFENSIVE EFFICACE</div>
+                    <div class="section-subtitle">L'efficacité, la patience et l'exploitation chirurgicale des opportunités surpassent la puissance brute</div>
+                </div>
+            </div>
+            <div class="tactic-card" style="margin: 20px 0;">
+                <div class="card-header">
+                    <span class="card-icon">⚠️</span>
+                    <span class="card-title">Principes d'Engagement Tactique - Règles d'Or</span>
+                </div>
+                <div class="card-content">
+                    <div class="strategy-tip" style="margin-bottom: 20px; background: rgba(231, 76, 60, 0.3); border-left-color: #e74c3c;">
+                        <strong>⚠️ PRIORITÉ ABSOLUE :</strong> Ne JAMAIS envoyer d'escouades secondaires sans être sûr à 100% qu'elles passeront. Un bon renseignement vaut plus que la puissance brute. Connaissez votre adversaire AVANT de frapper.
+                    </div>
+                    
+                    <div class="rules-grid">
+                        <div class="rule-card rule-dont">
+                            <h4>❌ ERREURS TACTIQUES CRITIQUES</h4>
+                            <strong>1. NE JAMAIS envoyer escouade faible en premier</strong><br>
+                            <span class="small-text">Faute de renseignement : alerte ennemi + révèle votre puissance → contre-attaque agressive</span><br><br>
+                            
+                            <strong>2. NE JAMAIS envoyer multiples escouades sur cible unique</strong><br>
+                            <span class="small-text">Si 1ère escouade vaincue, les suivantes le seront aussi. Résultat : 9,000 points gratuits à l'ennemi au lieu de 3,000</span><br><br>
+                            
+                            <strong>3. Cette faute ne sera pas tolérée</strong><br>
+                            <span class="small-text">Ne profite QU'À l'ennemi, gaspille vos troupes</span>
+                        </div>
+                        
+                        <div class="rule-card rule-do">
+                            <h4>✅ À FAIRE SYSTÉMATIQUEMENT</h4>
+                            <strong>1. Attaquer avec escouade la plus forte EN PREMIER</strong><br>
+                            <span class="small-text">Maximise chances de victoire, évite d'alerter ennemi avec attaque faible</span><br><br>
+                            
+                            <strong>2. Utiliser avions espions AVANT téléportation</strong><br>
+                            <span class="small-text">Discipline non négociable : évaluer défenses murales et présence troupes</span><br><br>
+                            
+                            <strong>3. Vérifier puissance adversaire avant engagement</strong><br>
+                            <span class="small-text">Évite téléportation coûteuse vers cible impossible</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-grid">
+                <div class="tactic-card">
+                    <div class="card-header">
+                        <span class="card-icon">🎯</span>
+                        <span class="card-title">Identification des Cibles de Haute Valeur</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="strategy-tip" style="margin-bottom: 15px;">
+                            <strong>Principe clé :</strong> Maximiser destructions en minimisant dépenses d'endurance. Chasser intelligemment > Attaquer aveuglément.
+                        </div>
+                        
+                        <div class="detail-list">
+                            <div class="detail-item">
+                                <strong>Chasse en "Zone Morte"</strong>
+                                • <span class="highlight">Localisation :</span> Zones reculées où bases détruites sont téléportées<br>
+                                • <span class="highlight">Profil cibles :</span> Joueurs inactifs/désorganisés<br>
+                                • <span class="highlight">Opportunité :</span> Troupes non protégées sur mur<br>
+                                • <span class="highlight">Avantage :</span> Points de destruction faciles, faible résistance
+                            </div>
+                            
+                            <div class="detail-item">
+                                <strong>Attaque des Collecteurs</strong>
+                                • <span class="highlight">Cibles prioritaires</span> pendant événements de destruction<br>
+                                • <span class="highlight">Erreur fréquente :</span> Joueurs déploient escouades complètes sur ressources<br>
+                                • <span class="highlight">Rendement :</span> ~3,100 destructions par attaque réussie<br>
+                                • <span class="highlight">Coût/Bénéfice :</span> Excellent retour sur investissement en endurance<br>
+                                • <span class="highlight">Tactique :</span> Surveiller déploiements pendant événements, frapper rapidement
+                            </div>
+                            
+                            <div class="detail-item">
+                                <strong>Sniper de Boucliers</strong>
+                                • <span class="highlight">Exige :</span> Patience + Surveillance active<br>
+                                • <span class="highlight">Procédure :</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;1. Cibler alliances plus faibles<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;2. Surveiller expiration boucliers (1h, 8h, 12h)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;3. Bouclier tombe → Téléport immédiat à proximité<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;4. Frappe multiple rapide ("tirer")<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;5. Repli avant organisation défensive<br>
+                                • <span class="highlight">Fenêtre d'opportunité :</span> 2-5 minutes maximum
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tactic-card">
+                    <div class="card-header">
+                        <span class="card-icon">🌐</span>
+                        <span class="card-title">Mécaniques de Guerre Inter-Serveurs</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="strategy-tip" style="margin-bottom: 15px;">
+                            <strong>Astuce :</strong> Le "Realm Hop" par camion offre accès permanent aux autres serveurs, pas limité aux événements. Idéal pour reconnaissance et raids opportunistes.
+                        </div>
+                        
+                        <div class="detail-list">
+                            <div class="detail-item">
+                                <strong>Méthode 1 : Accès par Événement (Invasions Coordonnées)</strong>
+                                • <span class="highlight">Événements dédiés :</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;- Alliance Duel (Warzone Duel)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;- Enemy Buster Day (Journée Destruction Ennemis)<br>
+                                • <span class="highlight">Procédure :</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;1. Cliquer icône événement<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;2. Accéder interface de guerre<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;3. Téléportation temporaire serveur adverse<br>
+                                • <span class="highlight">Usage :</span> Opérations à grande échelle, objectifs d'alliance
+                            </div>
+                            
+                            <div class="detail-item">
+                                <strong>Méthode 2 : "Realm Hop" par Camion (Raids d'Opportunité)</strong>
+                                • <span class="highlight">Outil :</span> Camions de pillage (Plunder Trucks)<br>
+                                • <span class="highlight">Procédure :</span><br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;1. Rafraîchir liste des camions<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;2. Identifier cibles autres serveurs (hashtag #1234 devant nom)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;3. Interagir avec camion → Déplacement temporaire<br>
+                                • <span class="highlight">Usage :</span> Reconnaissance, pillage ressources, raids rapides<br>
+                                • <span class="highlight">Avantage :</span> Accès permanent, pas limité aux événements
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SECTION 3: RESSOURCES -->
+        <div class="main-section section-3">
+            <div class="section-header">
+                <div class="section-icon">📦</div>
+                <div>
+                    <div class="section-title">3. GESTION STRATÉGIQUE DES RESSOURCES</div>
+                    <div class="section-subtitle">Les guerres se gagnent par une gestion supérieure de la logistique. Maîtrisez votre économie de guerre.</div>
+                </div>
+            </div>
+            
+            <div class="content-grid">
+                <div class="tactic-card">
+                    <div class="card-header">
+                        <span class="card-icon">🏥</span>
+                        <span class="card-title">Gestion de l'Hôpital et des Troupes</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="strategy-tip" style="margin-bottom: 15px;">
+                            <strong>Principes clé :</strong><br>
+                            • L'hôpital est le cœur de votre capacité à rester dans la bataille.<br>
+                            • Gestion optimale = Capacité à combattre des vagues successives sans pertes définitives.
+                        </div>
+                        
+                        <p><strong>Une mauvaise gestion = pertes définitives et sortie prématurée du conflit.</strong></p>
+                        
+                        <div class="detail-list">
+                            <div class="detail-item">
+                                <strong>Règle 1 : Surveillance Permanente de la Capacité</strong>
+                                • Connaître capacité maximale hôpital en permanence<br>
+                                • <span class="highlight">Débordement = Perte définitive de troupes</span><br>
+                                • Vérifier avant chaque engagement majeur<br>
+                                • Anticiper remplissage lors combats intenses
+                            </div>
+                            
+                            <div class="detail-item">
+                                <strong>Règle 2 : Guérison Assistée par l'Alliance</strong>
+                                • <strong>Principe :</strong> Régler minuterie = durée couverte par aides alliance<br>
+                                • <span class="highlight">Règle empirique :</span> Guérison terminée en <15 secondes après demande aide<br>
+                                • Si >15 secondes → Durée trop longue, ajuster à la baisse<br>
+                                • <strong>Optimisation :</strong> Alliance active = guérisons quasi-instantanées
+                            </div>
+                            
+                            <div class="detail-item">
+                                <strong>Règle 3 : Utilisation Disciplinée des Accélérateurs</strong>
+                                • <span class="highlight">Statut :</span> Ressource d'URGENCE uniquement<br>
+                                • <strong>Quand utiliser :</strong><br>
+                                &nbsp;&nbsp;- Hôpital proche capacité maximale<br>
+                                &nbsp;&nbsp;- Combat intense nécessitant reset rapide<br>
+                                &nbsp;&nbsp;- Libérer espace pour nouvelles troupes blessées<br>
+                                • <strong>NE PAS utiliser :</strong> Pour guérison de confort ou petites quantités
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tactic-card">
+                    <div class="card-header">
+                        <span class="card-icon">🚀</span>
+                        <span class="card-title">Arsenal de Mobilité : Téléporteurs</span>
+                    </div>
+                    <div class="card-content">
+                        <div class="strategy-tip" style="margin-bottom: 15px;">
+                            <strong>Principe clé :</strong><br>
+                            <strong>Les téléporteurs</strong> ne sont pas des objets de commodités.<br>
+                            <span class="highlight">Ce sont des outils stratégiques essentiels pour l'attaque, la défense et la survie.</span>
+                        </div>
+                        
+                        <div class="resource-section">
+                            <div class="resource-card">
+                                <div class="resource-header">
+                                    <span class="resource-icon">🎲</span>
+                                    <span class="resource-title">Téléporteur Aléatoire</span>
+                                </div>
+                                <strong>Fonction :</strong> Évasion d'urgence<br>
+                                <strong>Usage :</strong> Retraite rapide et désorganisée<br>
+                                <strong>Condition :</strong> Toutes troupes DANS la base<br>
+                                <strong>Destination :</strong> Position aléatoire sur carte<br>
+                                <strong>Idéal pour :</strong> <span class="highlight">Échapper attaque imminente sans préparation</span>
+                            </div>
+                            
+                            <div class="resource-card">
+                                <div class="resource-header">
+                                    <span class="resource-icon">🏠</span>
+                                    <span class="resource-title">Téléporteur d'Alliance</span>
+                                </div>
+                                <strong>Fonction :</strong> Repli tactique sécurisé<br>
+                                <strong>Usage :</strong> Retour rapide au territoire alliance<br>
+                                <strong>Condition :</strong> Toutes troupes DANS la base<br>
+                                <strong>Destination :</strong> Centre territoire alliance<br>
+                                <strong>Idéal pour :</strong> <span class="highlight">Se replacer sous protection du groupe</span>
+                            </div>
+                            
+                            <div class="resource-card">
+                                <div class="resource-header">
+                                    <span class="resource-icon">🎯</span>
+                                    <span class="resource-title">Téléporteur Avancé</span>
+                                </div>
+                                <strong>Fonction :</strong> Positionnement chirurgical<br>
+                                <strong>Usage :</strong> Attaques ciblées précises<br>
+                                <strong>Condition :</strong> Toutes troupes DANS la base<br>
+                                <strong>Destination :</strong> Position EXACTE choisie sur carte<br>
+                                <strong>Idéal pour :</strong> <span class="highlight">Frappes surprises, sniping, repositionnement stratégique</span>
+                            </div>
+                            
+                            <div class="resource-card">
+                                <div class="resource-header">
+                                    <span class="resource-icon">⚔️</span>
+                                    <span class="resource-title">Téléporteur Zone de Guerre</span>
+                                </div>
+                                <strong>Fonction :</strong> Extraction d'urgence absolue<br>
+                                <strong>Usage :</strong> <span class="highlight">SEUL téléporteur utilisable avec troupes déployées</span><br>
+                                <strong>Condition :</strong> Fonctionne même avec escouades HORS base<br>
+                                <strong>Procédure :</strong><br>
+                                1. Activer objet<br>
+                                2. Dézoomer carte complètement<br>
+                                3. Choisir destination aléatoire<br>
+                                <strong>Timing :</strong> Exécution rapide cruciale
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SUPPRIMÉ : Discipline Économique VS - Plus nécessaire
+            <div class="tactic-card" style="margin-top: 20px;">
+                <div class="card-header">
+                    <span class="card-icon">💎</span>
+                    <span class="card-title">Discipline Économique pour Événements VS (Versus)</span>
+                </div>
+                ...
+            </div>
+            -->
+        </div>
+        
+        <!-- SECTION 4: ÉVÉNEMENTS MAJEURS -->
+        <div class="main-section section-4">
+            <div class="section-header">
+                <div class="section-icon">👑</div>
+                <div>
+                    <div class="section-title">4. MANUELS DE JEU POUR ÉVÉNEMENTS MAJEURS</div>
+                    <div class="section-subtitle">Le succès dépend de l'exécution disciplinée de plans coordonnés et de l'adaptation aux défis uniques</div>
+                </div>
+            </div>
+            
+            <div class="tactic-card">
+                <div class="card-header">
+                    <span class="card-icon">🌊</span>
+                    <span class="card-title">Stratégie d'Invasion "Warzone Duel" (Serveur Outsider vs Serveur Plus Fort)</span>
+                </div>
+                <div class="card-content">
+                    <div class="strategy-tip" style="margin-bottom: 20px;">
+                        <strong>Clé de la victoire :</strong><br>
+                        • Discipline + Respect des rôles.<br>
+                        • Victoire = coordination + nombre, pas puissance individuelle.
+                    </div>
+                    
+                    <p><strong>Plan de bataille pour serveur plus faible envahissant serveur plus fort.</strong></p>
+                    
+                    <div class="phase-timeline">
+                        <div class="phase">
+                            <div class="phase-number">1</div>
+                            <div class="phase-title">Mobilisation Pré-Bataille</div>
+                            <div class="phase-desc">
+                                <strong>Timing :</strong> 1 semaine avant<br>
+                                <strong>Action :</strong> Leadership (Président, R5) communique stratégie<br>
+                                <strong>Objectif :</strong> Participation massive<br>
+                                <strong>Principe clé :</strong> <span class="highlight">Nombre de participants actifs = multiplicateur de force supérieur à puissance élite</span><br>
+                                <strong>Message :</strong> Chaque joueur compte
+                            </div>
+                        </div>
+                        
+                        <div class="arrow-connector">→</div>
+                        
+                        <div class="phase">
+                            <div class="phase-number">2</div>
+                            <div class="phase-title">Arrivée Anticipée</div>
+                            <div class="phase-desc">
+                                <strong>Timing :</strong> 1 heure minimum avant début<br>
+                                <strong>Action :</strong> Téléport zone guerre ennemie<br>
+                                <strong>Objectifs :</strong><br>
+                                • Occuper positions stratégiques (Capitole, canons)<br>
+                                • "Nettoyer" en attaquant joueurs faibles<br>
+                                • Démoraliser adversaires<br>
+                                • Forcer utilisation boucliers précoce<br>
+                                • Vider hôpitaux ennemis AVANT combat principal
+                            </div>
+                        </div>
+                        
+                        <div class="arrow-connector">→</div>
+                        
+                        <div class="phase">
+                            <div class="phase-number">3</div>
+                            <div class="phase-title">Tactique du "Flot"</div>
+                            <div class="phase-desc">
+                                <strong>Rôle :</strong> Joueurs plus faibles<br>
+                                <strong>Configuration :</strong> <span class="highlight">AUCUNE troupe sur mur</span><br>
+                                <strong>Objectif :</strong> Guerre d'attrition<br>
+                                <strong>Fonction :</strong><br>
+                                • Enliser forces élites ennemies<br>
+                                • Échanger temps contre endurance adverse<br>
+                                • Perturber tempo offensif<br>
+                                <strong>Impact :</strong> Forcer ennemi à perdre temps précieux pour éliminer unités dans "boue"<br>
+                                <span class="highlight">Ce ne sont PAS des sacrifices, mais des instruments tactiques</span>
+                            </div>
+                        </div>
+                        
+                        <div class="arrow-connector">→</div>
+                        
+                        <div class="phase">
+                            <div class="phase-number">4</div>
+                            <div class="phase-title">Concentration de Force</div>
+                            <div class="phase-desc">
+                                <strong>Rôle :</strong> Joueurs les plus puissants<br>
+                                <strong>Action :</strong> Renforts mutuels entre joueurs puissants<br>
+                                <strong>Cibles :</strong> Capitole + objectifs prioritaires UNIQUEMENT<br>
+                                <strong>Principe :</strong> <span class="highlight">Utiliser puissance de frappe où elle est plus efficace</span><br>
+                                <strong>Interdiction :</strong> Joueurs faibles NE DOIVENT PAS attaquer cibles principales<br>
+                                <strong>Coordination :</strong> Ralliements synchronisés sur objectifs stratégiques
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="strategy-tip" style="margin-top: 20px;">
+                        <strong>Importance des rôles :</strong><br>
+                        Le mélange des rôles mène à la défaite.<br>
+                        • Joueurs faibles = Écran/Chaos : désorganise les assaillants et réduit leur endurance pour protéger les forts.<br>
+                        • Joueurs forts = Frappe décisive : diminue la puissance de frappe ennemie, capture les objectifs critique. 
+                    </div>
+                </div>
+            </div>
+        <!-- SECTION 5: STRATÉGIE RARE SOIL WAR     
+            <div class="tactic-card" style="margin-top: 20px;">
+                <div class="card-header">
+                    <span class="card-icon">💥</span>
+                    <span class="card-title">Stratégie d'Assaut "Rare Soil War"</span>
+                </div>
+                <div class="card-content">
+                    <p><strong>Vaincre alliance plus puissante par analyse, synchronisation et pression ciblée. Force brute inefficace.</strong></p>
+                    
+                    <div class="detail-list">
+                        <div class="detail-item">
+                            <strong>Phase 1 : Évaluation de la Menace</strong>
+                            • <span class="highlight">NE PAS se fier au score de puissance total</span> (gonflé par joueurs inactifs AFK)<br>
+                            • <strong>Analyser :</strong><br>
+                            &nbsp;&nbsp;- Nombre de "baleines" ACTIVES<br>
+                            &nbsp;&nbsp;- Joueurs réellement présents et défendant<br>
+                            &nbsp;&nbsp;- Niveau d'organisation défensive<br>
+                            • <span class="highlight">Principe clé :</span> Activité prime sur puissance affichée<br>
+                            • Une alliance "forte" mais inactive < Alliance "moyenne" mais disciplinée et active
+                        </div>
+                        
+                        <div class="detail-item">
+                            <strong>Phase 2 : Approche Séquentielle Standard</strong>
+                            • <strong>Stratégie classique :</strong><br>
+                            &nbsp;&nbsp;1. Détruire méthodiquement QG environnants<br>
+                            &nbsp;&nbsp;2. Affaiblir position défensive globale<br>
+                            &nbsp;&nbsp;3. Concentrer tous efforts sur bâtiment central ("fournaise")<br>
+                            • <span class="highlight">Avantage :</span> Réduit capacité renforts ennemis progressivement
+                        </div>
+                        
+                        <div class="detail-item">
+                            <strong>Phase 3 : Ralliement Synchronisé - TACTIQUE CLÉ</strong>
+                            • <span class="highlight">La méthode la plus puissante pour briser défense solide</span><br><br>
+                            
+                            <strong>Exécution :</strong><br>
+                            • Lancer <span class="highlight">10-20 ralliements SIMULTANÉS</span><br>
+                            • Fenêtre de frappe : <span class="highlight">5 minutes concentrées</span><br>
+                            • Coordination via communication alliance (Discord/chat)<br><br>
+                            
+                            <strong>LA PAUSE STRATÉGIQUE (CRUCIALE) :</strong><br>
+                            • Après chaque vague → <span class="highlight">PAUSE OBLIGATOIRE</span><br>
+                            • <strong>Raisons :</strong><br>
+                            &nbsp;&nbsp;1. Permettre TOUTES troupes de revenir<br>
+                            &nbsp;&nbsp;2. Regroupement complet<br>
+                            &nbsp;&nbsp;3. Vague suivante frappe à nouveau avec pression synchronisée maximale<br>
+                            • <span class="highlight">Efficacité :</span> Drain PV bâtiments défendus extrêmement efficace<br><br>
+                            
+                            <strong>Ralliements vs Attaques Individuelles :</strong><br>
+                            • <span class="highlight">Ralliements TOUJOURS supérieurs</span> si cible renforcée<br>
+                            • <strong>Exception :</strong> Si renforts ennemis ralentissent → Mélange ralliements + attaques individuelles<br>
+                            • Objectif : Submerger défenseurs restants
+                        </div>
+                        
+                        <div class="detail-item">
+                            <strong>Phase 4 : Neutralisation des Piliers Défensifs</strong>
+                            • <strong>Problème :</strong> Une seule "baleine" surpuissante absorbe majorité renforts et bloque accès<br>
+                            • <strong>Solution :</strong><br>
+                            &nbsp;&nbsp;1. Identifier joueur défensif clé<br>
+                            &nbsp;&nbsp;2. <span class="highlight">Changer de cible : Lancer ralliement sur SA base directement</span><br>
+                            &nbsp;&nbsp;3. Forcer joueur à se défendre ou se retirer<br>
+                            &nbsp;&nbsp;4. Brèche créée dans ligne défensive<br>
+                            • <span class="highlight">Principe :</span> Si ne pouvez pas passer par le pilier, détruisez le pilier
+                        </div>
+                        
+                        <div class="detail-item">
+                            <strong>Phase 5 : Usage Tactique du Missile</strong>
+                            • <span class="highlight">Utiliser depuis longue distance</span><br>
+                            • <strong>Objectif stratégique (même si intercepté) :</strong><br>
+                            &nbsp;&nbsp;- Forcer défenseurs à se téléporter hors position pour interception<br>
+                            &nbsp;&nbsp;- Créer ouvertures et brèches dans ligne défensive<br>
+                            &nbsp;&nbsp;- Désorganiser coordination ennemie<br>
+                            • <span class="highlight">Impact :</span> Efficace même sans atteindre cible physiquement<br>
+                            • <strong>Bonus :</strong> Si atteint cible = Dégâts massifs + désorganisation
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        -->    
+        </div>
+    </div>
+</body>
+</html>
