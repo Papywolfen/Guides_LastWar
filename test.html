@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Bouton haut de page</title>
+  <style>
+    #scrollToTopBtn {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 100;
+      background-color: #555;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+    #scrollToTopBtn.show {
+      display: block;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <div style="height:1500px;">
+    <h1>Test scroll retour en haut</h1>
+    <p>Fais défiler la page...</p>
+  </div>
+  <button onclick="topFunction()" id="scrollToTopBtn" title="Aller en haut">↑</button>
+  <script>
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    window.onscroll = function() {
+      if (document.documentElement.scrollTop > 20 || document.body.scrollTop > 20) {
+        scrollToTopBtn.classList.add("show");
+      } else {
+        scrollToTopBtn.classList.remove("show");
+      }
+    };
+    function topFunction() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>

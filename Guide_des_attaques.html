@@ -152,7 +152,20 @@
             display: block;
             margin-bottom: 5px;
         }
+
+        .detail-item a {
+            color: #F3E355;
+            font-weight: 500;
+            transition: color 0.25s;
+        }
+        .detail-item a:hover {
+            color: #FFFFFF;
+        }
         
+        .section-m {
+            border-color: #2ff871;
+        }
+
         .pros-cons-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -383,6 +396,33 @@
             position: relative;
         }
         
+        #scrollToTopBtn {
+            display: none; /* caché au départ */
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        #scrollToTopBtn.show {
+            display: block;
+            opacity: 1;
+        }
+
+        .section-6 {
+            border: 0;
+            background: transparent;
+        }
+
         @media (max-width: 1200px) {
             .content-grid {
                 grid-template-columns: 1fr;
@@ -499,9 +539,29 @@
             </div>
         </div>
     </div>
-<!-- SECTION 1: RINCIPES FONDAMENTAUX DE DÉFENSE -->
-    <div class="container">   
-        <div class="main-section section-2">
+    <div class="container"> 
+        <!-- Menu -->  
+        <div class="main-section section-m">
+            <div class="content-grid">
+                <div class="tactic-card" style="border-left-color: #4c096e;">
+                    <div class="card-header">
+                        <span class="card-icon">🗺️</span>
+                        <span class="card-title">Menu</span>
+                    </div>
+                    <div class="detail-list">
+                        <div class="detail-item">
+                            •  <a href="#Defense">1. PRINCIPES FONDAMENTAUX DE DÉFENSE</a><br>
+                            •  <a href="#Attaque">2. L'ART DE L'OFFENSIVE EFFICACE</a><br>
+                            •  <a href="#Ressources">3. GESTION STRATÉGIQUE DES RESSOURCES</a><br>
+                            •  <a href="#Evenements">4. MANUELS DE JEU POUR ÉVÉNEMENTS MAJEURS</a><br>
+                            •  <a href="#Dons">Support</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- SECTION 1: RINCIPES FONDAMENTAUX DE DÉFENSE -->
+        <div id="Defense" class="main-section section-2">
             <div class="section-header">
                 <div class="section-icon">⚡</div>
                 <div>
@@ -624,7 +684,7 @@
             </div>
         </div>    
         <!-- SECTION 2: OFFENSIVE -->
-        <div class="main-section section-2">
+        <div id="Attaque" class="main-section section-2">
             <div class="section-header">
                 <div class="section-icon">⚡</div>
                 <div>
@@ -753,7 +813,7 @@
         </div>
         
         <!-- SECTION 3: RESSOURCES -->
-        <div class="main-section section-3">
+        <div id="Ressources" class="main-section section-3">
             <div class="section-header">
                 <div class="section-icon">📦</div>
                 <div>
@@ -876,7 +936,7 @@
             </div>
         </div>
         <!-- SECTION 4: ÉVÉNEMENTS MAJEURS -->
-        <div class="main-section section-4">
+        <div id="Evenements" class="main-section section-4">
             <div class="section-header">
                 <div class="section-icon">👑</div>
                 <div>
@@ -1145,6 +1205,7 @@
             </div>
         -->    
         </div>
+        <!-- Section 5 Support -->
         <div class="main-section section-5">
             <div class="content-grid">
                 <div class="tactic-card" style="border-left-color: #4c096e;">
@@ -1160,6 +1221,25 @@
                 </div>
             </div>
         </div>
+        <!-- SCROLL TO TOP BUTTON -->
+        <button onclick="topFunction()" id="scrollToTopBtn" title="Aller en haut">↑</button>
+        </div>
     </div>
+    <script>
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        window.onscroll = function() {
+        if (document.documentElement.scrollTop > 20 || document.body.scrollTop > 20) {
+            scrollToTopBtn.classList.add("show");
+        } else {
+            scrollToTopBtn.classList.remove("show");
+        }
+        };
+
+        function topFunction() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        console.log(scrollToTopBtn);
+    </script>
 </body>
 </html>
