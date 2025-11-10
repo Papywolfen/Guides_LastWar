@@ -87,6 +87,12 @@
             margin-top: 5px;
         }
         
+        .memo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
         .content-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -468,7 +474,7 @@
                 </div>
             </div>
             
-            <div class="content-grid">
+            <div class="memo-grid">
                 <div class="tactic-card" style="border-left-color: #ffd700;">
                     <div class="card-header">
                         <span class="card-icon">✅</span>
