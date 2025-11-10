@@ -21,6 +21,7 @@
         
         .container {
             max-width: 1600px;
+            min-width: 400px;
             width: 90%;
             margin: 0 auto;
         }
@@ -429,6 +430,10 @@
                 width: 90%;
                 grid-template-columns: 1fr;
             }
+
+            .pros-cons-grid {
+                grid-template-columns: 1fr;
+            }
             
             h1 {
                 font-size: 2em;
@@ -731,83 +736,80 @@
                     </div>
                 </div>
             </div>
-            <div class="content-grid">
-                <div class="tactic-card">
-                    <div class="card-header">
-                        <span class="card-icon">🎯</span>
-                        <span class="card-title">Identification des Cibles de Haute Valeur</span>
+            <div class="tactic-card">
+                <div class="card-header">
+                    <span class="card-icon">🎯</span>
+                    <span class="card-title">Identification des Cibles de Haute Valeur</span>
+                </div>
+                <div class="card-content">
+                    <div class="strategy-tip" style="margin-bottom: 15px;">
+                        <strong>Principe clé :</strong> Maximiser destructions en minimisant dépenses d'endurance. Chasser intelligemment > Attaquer aveuglément.
                     </div>
-                    <div class="card-content">
-                        <div class="strategy-tip" style="margin-bottom: 15px;">
-                            <strong>Principe clé :</strong> Maximiser destructions en minimisant dépenses d'endurance. Chasser intelligemment > Attaquer aveuglément.
-                        </div>
                         
-                        <div class="detail-list">
-                            <div class="detail-item">
-                                <strong>Chasse en "Zone Morte"</strong>
-                                • <span class="highlight">Localisation :</span> Zones reculées où bases détruites sont téléportées<br>
-                                • <span class="highlight">Profil cibles :</span> Joueurs inactifs/désorganisés<br>
-                                • <span class="highlight">Opportunité :</span> Troupes non protégées sur mur<br>
-                                • <span class="highlight">Avantage :</span> Points de destruction faciles, faible résistance
-                            </div>
+                    <div class="detail-list">
+                        <div class="detail-item">
+                            <strong>Chasse en "Zone Morte"</strong>
+                            • <span class="highlight">Localisation :</span> Zones reculées où bases détruites sont téléportées<br>
+                            • <span class="highlight">Profil cibles :</span> Joueurs inactifs/désorganisés<br>
+                            • <span class="highlight">Opportunité :</span> Troupes non protégées sur mur<br>
+                            • <span class="highlight">Avantage :</span> Points de destruction faciles, faible résistance
+                        </div>
                             
-                            <div class="detail-item">
-                                <strong>Attaque des Collecteurs</strong>
-                                • <span class="highlight">Cibles prioritaires</span> pendant événements de destruction<br>
-                                • <span class="highlight">Erreur fréquente :</span> Joueurs déploient escouades complètes sur ressources<br>
-                                • <span class="highlight">Rendement :</span> ~3,100 destructions par attaque réussie<br>
-                                • <span class="highlight">Coût/Bénéfice :</span> Excellent retour sur investissement en endurance<br>
-                                • <span class="highlight">Tactique :</span> Surveiller déploiements pendant événements, frapper rapidement
-                            </div>
+                        <div class="detail-item">
+                            <strong>Attaque des Collecteurs</strong>
+                            • <span class="highlight">Cibles prioritaires</span> pendant événements de destruction<br>
+                            • <span class="highlight">Erreur fréquente :</span> Joueurs déploient escouades complètes sur ressources<br>
+                            • <span class="highlight">Rendement :</span> ~3,100 destructions par attaque réussie<br>
+                            • <span class="highlight">Coût/Bénéfice :</span> Excellent retour sur investissement en endurance<br>
+                            • <span class="highlight">Tactique :</span> Surveiller déploiements pendant événements, frapper rapidement
+                        </div>
                             
-                            <div class="detail-item">
-                                <strong>Sniper de Boucliers</strong>
-                                • <span class="highlight">Exige :</span> Patience + Surveillance active<br>
-                                • <span class="highlight">Procédure :</span><br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;1. Cibler alliances plus faibles<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;2. Surveiller expiration boucliers (1h, 8h, 12h)<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;3. Bouclier tombe → Téléport immédiat à proximité<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;4. Frappe multiple rapide ("tirer")<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;5. Repli avant organisation défensive<br>
-                                • <span class="highlight">Fenêtre d'opportunité :</span> 2-5 minutes maximum
-                            </div>
+                        <div class="detail-item">
+                            <strong>Sniper de Boucliers</strong>
+                            • <span class="highlight">Exige :</span> Patience + Surveillance active<br>
+                            • <span class="highlight">Procédure :</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;1. Cibler alliances plus faibles<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;2. Surveiller expiration boucliers (1h, 8h, 12h)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;3. Bouclier tombe → Téléport immédiat à proximité<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;4. Frappe multiple rapide ("tirer")<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;5. Repli avant organisation défensive<br>
+                            • <span class="highlight">Fenêtre d'opportunité :</span> 2-5 minutes maximum
                         </div>
                     </div>
                 </div>
-                
-                <div class="tactic-card">
-                    <div class="card-header">
-                        <span class="card-icon">🌐</span>
-                        <span class="card-title">Mécaniques de Guerre Inter-Serveurs</span>
+            </div>    
+            <div class="tactic-card">
+                <div class="card-header">
+                    <span class="card-icon">🌐</span>
+                    <span class="card-title">Mécaniques de Guerre Inter-Serveurs</span>
+                </div>
+                <div class="card-content">
+                    <div class="strategy-tip" style="margin-bottom: 15px;">
+                        <strong>Astuce :</strong> Le "Realm Hop" par camion offre accès permanent aux autres serveurs, pas limité aux événements. Idéal pour reconnaissance et raids opportunistes.
                     </div>
-                    <div class="card-content">
-                        <div class="strategy-tip" style="margin-bottom: 15px;">
-                            <strong>Astuce :</strong> Le "Realm Hop" par camion offre accès permanent aux autres serveurs, pas limité aux événements. Idéal pour reconnaissance et raids opportunistes.
-                        </div>
                         
-                        <div class="detail-list">
-                            <div class="detail-item">
-                                <strong>Méthode 1 : Accès par Événement (Invasions Coordonnées)</strong>
-                                • <span class="highlight">Événements dédiés :</span><br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;- Alliance Duel (Warzone Duel)<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;- Enemy Buster Day (Journée Destruction Ennemis)<br>
-                                • <span class="highlight">Procédure :</span><br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;1. Cliquer icône événement<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;2. Accéder interface de guerre<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;3. Téléportation temporaire serveur adverse<br>
-                                • <span class="highlight">Usage :</span> Opérations à grande échelle, objectifs d'alliance
-                            </div>
+                    <div class="detail-list">
+                        <div class="detail-item">
+                            <strong>Méthode 1 : Accès par Événement (Invasions Coordonnées)</strong>
+                            • <span class="highlight">Événements dédiés :</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;- Alliance Duel (Warzone Duel)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;- Enemy Buster Day (Journée Destruction Ennemis)<br>
+                            • <span class="highlight">Procédure :</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;1. Cliquer icône événement<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;2. Accéder interface de guerre<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;3. Téléportation temporaire serveur adverse<br>
+                            • <span class="highlight">Usage :</span> Opérations à grande échelle, objectifs d'alliance
+                        </div>
                             
-                            <div class="detail-item">
-                                <strong>Méthode 2 : "Realm Hop" par Camion (Raids d'Opportunité)</strong>
-                                • <span class="highlight">Outil :</span> Camions de pillage (Plunder Trucks)<br>
-                                • <span class="highlight">Procédure :</span><br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;1. Rafraîchir liste des camions<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;2. Identifier cibles autres serveurs (hashtag #1234 devant nom)<br>
-                                &nbsp;&nbsp;&nbsp;&nbsp;3. Interagir avec camion → Déplacement temporaire<br>
-                                • <span class="highlight">Usage :</span> Reconnaissance, pillage ressources, raids rapides<br>
-                                • <span class="highlight">Avantage :</span> Accès permanent, pas limité aux événements
-                            </div>
+                        <div class="detail-item">
+                            <strong>Méthode 2 : "Realm Hop" par Camion (Raids d'Opportunité)</strong>
+                            • <span class="highlight">Outil :</span> Camions de pillage (Plunder Trucks)<br>
+                            • <span class="highlight">Procédure :</span><br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;1. Rafraîchir liste des camions<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;2. Identifier cibles autres serveurs (hashtag #1234 devant nom)<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;3. Interagir avec camion → Déplacement temporaire<br>
+                            • <span class="highlight">Usage :</span> Reconnaissance, pillage ressources, raids rapides<br>
+                            • <span class="highlight">Avantage :</span> Accès permanent, pas limité aux événements
                         </div>
                     </div>
                 </div>
